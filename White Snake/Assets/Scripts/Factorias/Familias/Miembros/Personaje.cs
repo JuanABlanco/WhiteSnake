@@ -24,7 +24,7 @@ public class Personaje : MonoBehaviour {
     public GameObject DropLoot()
     {
         GameObject droped = null;
-        if (this.invetario[0] != null) { 
+        if (this.invetario.Count == 0) { 
             int dropedIndex = Random.Range(0, this.invetario.Count - 1);
             droped = Instantiate(this.invetario[dropedIndex], transform.position, Quaternion.identity) as GameObject;
             this.invetario.RemoveAt(dropedIndex);
