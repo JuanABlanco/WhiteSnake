@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : Personaje {
 
-    public float maxSpeed = 10f;
 
     public float speed = 2f;
 
     private Rigidbody2D rb2d;
 
+    void Awake()
+    {
+        this.maxSpeed = 10f;
+        DropLoot();
+    }
 	// Use this for initialization
 	void Start () {
 
