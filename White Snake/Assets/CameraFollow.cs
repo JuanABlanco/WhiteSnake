@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
     public GameObject follow;
+    public Vector2 minCamPos, maxCamPos;
     public float smoothTime;
 
     private Vector2 velocity;
@@ -26,7 +27,10 @@ public class CameraFollow : MonoBehaviour {
                      ref velocity.y,
                      smoothTime);
 
-        transform.position = new Vector3(posX, posY, transform.position.z);
+        transform.position = new Vector3(
+            Mathf.Clamp(posX, minCamPos.x, maxCamPos.x),
+            Mathf.Clamp(posY, minCamPos.y, maxCamPos.y),
+            transform.position.z);
 
     }
 }

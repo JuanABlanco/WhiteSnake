@@ -68,4 +68,9 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(rb2d.velocity.x);
 
     }
+
+    void OnBecameInvisible()
+    {
+        transform.position = new Vector3(-8, 2, 0);
+    }
 }
