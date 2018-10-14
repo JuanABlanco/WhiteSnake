@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Personaje {
+public class PlayerController : MonoBehaviour {
 
     //Variables
 
@@ -15,11 +15,6 @@ public class PlayerController : Personaje {
     private Animator anim;
     private bool jump;
 
-    void Awake()
-    {
-        this.maxLife = 3;
-        this.currentLife = this.maxLife;
-    }
 
 	// Use this for initialization
 	void Start () {
@@ -70,32 +65,12 @@ public class PlayerController : Personaje {
             jump = false;
         }
 
-        //Debug.Log(rb2d.velocity.x);
+        Debug.Log(rb2d.velocity.x);
 
     }
 
-    // Trigger de la colision 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("ke");
-        if (col.tag == "Enemy")
-        {
-            
-            this.currentLife = this.currentLife - 1;
-
-            if(this.currentLife == 0)
-            {
-                DropLoot();
-            }
-        }
-    }
-
-<<<<<<< HEAD:White Snake/Assets/PlayerController.cs
     void OnBecameInvisible()
     {
         transform.position = new Vector3(-8, 2, 0);
     }
-=======
-
->>>>>>> Developing-JB:White Snake/Assets/Scripts/PlayerController.cs
 }
