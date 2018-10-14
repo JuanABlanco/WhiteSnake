@@ -6,8 +6,10 @@ public class Personaje : MonoBehaviour {
 
     public int maxLife;
     public int currentLife;
+    public float maxSpeed;
+    public float currentSpeed;
     private string pName;
-    public List<GameObject> invetario;
+    public List<Objeto> invetario;
     public int baseDamage;
     public int currentDamage;
 
@@ -20,24 +22,17 @@ public class Personaje : MonoBehaviour {
     /* Como prerequisito de DropLoot debera estar en un if que observe si la lista drop no esta vacia
          
          */
-    public void DropLoot()
+    public Objeto DropLoot()
     {
-        if(this.invetario.Count != 0) { 
-            int dropedIndex = Random.Range(0, this.invetario.Count - 1);
-            if (this.invetario[dropedIndex].GetComponent<Objeto>().drop)
-            {
-                GameObject droped = this.invetario[dropedIndex];
-                Instantiate(droped, transform.position, Quaternion.identity);
-                this.invetario.RemoveAt(dropedIndex);
-            }
-
-        }
-
-
+        int dropedIndex = Random.Range(0, this.invetario.Count - 1);
+        Objeto droped = new Objeto(this.invetario[dropedIndex]);
+        
+        return droped;
     }
 
 
 
 
 
+    
 }
