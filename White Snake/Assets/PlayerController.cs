@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : Personaje {
 
     //Variables
 
@@ -15,9 +15,13 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     private bool jump;
 
-
-	// Use this for initialization
-	void Start () {
+    void Awake()
+    {
+        this.maxLife = 3;
+        this.currentLife = this.maxLife;
+    }
+    // Use this for initialization
+    void Start () {
 
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -73,5 +77,19 @@ public class PlayerController : MonoBehaviour {
     void OnBecameInvisible()
     {
         transform.position = new Vector3(-8, 2, 0);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("ke");
+        if (col.tag == "Enemy")
+        {
+
+            this.currentLife = this.currentLife - 1;
+            if (this.currentLife == 0)
+            {
+                DropLoot();
+            }
+        }
     }
 }
