@@ -48,10 +48,13 @@ public class EnemyController : MonoBehaviour {
 
         if (col.gameObject.tag == "Player")
         {
-            float yOffset = 1.28f;
+            float yOffset = 2f;
             if (transform.position.y + yOffset < col.transform.position.y)
             {
                 Destroy(gameObject);
+            } else
+            {
+                col.SendMessage("EnemyKnockBack", transform.position.x);
             }
             
         }

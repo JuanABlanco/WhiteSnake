@@ -13,7 +13,9 @@ public class PlayerController : Personaje {
 
     private Rigidbody2D rb2d; //Cuerpo rigido
     private Animator anim;
+    private SpriteRenderer spr;
     private bool jump;
+    private bool movement = true;
 
     void Awake()
     {
@@ -25,6 +27,7 @@ public class PlayerController : Personaje {
 
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
 
     }
 	
@@ -48,6 +51,11 @@ public class PlayerController : Personaje {
 
         float h = Input.GetAxis("Horizontal");
 
+        if (!movement)
+        {
+            h = 0;
+        }
+
         rb2d.AddForce(Vector2.right * h * speed);
 
         float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
@@ -70,7 +78,7 @@ public class PlayerController : Personaje {
             jump = false;
         }
 
-        Debug.Log(rb2d.velocity.x);
+        //Debug.Log(rb2d.velocity.x);
 
     }
 
@@ -82,7 +90,7 @@ public class PlayerController : Personaje {
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("ke");
-        if (col.tag == "Enemy")
+        if (col.tag == "Enemies")
         {
 
             this.currentLife = this.currentLife - 1;
@@ -91,5 +99,27 @@ public class PlayerController : Personaje {
                 DropLoot();
             }
         }
+    }
+
+    public void EnemyKnockBack(float enemyPosX)
+    {
+        jump = true;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+
+        rb2d.AddForce(Vector2.left * side * jumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+        Invoke("EnableMovement", 0.7f);
+
+        Color color = new Color(255/255f, 106/255f, 0f);
+
+        spr.color = color;
+    } 
+
+    void EnableMovement()
+    {
+        movement = true;
+        spr.color = Color.white;
     }
 }
