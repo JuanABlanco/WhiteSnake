@@ -90,14 +90,16 @@ public class PlayerController : Personaje {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("ke");
+        
         if (col.tag == "Enemy")
         {
-
+            Debug.Log("ke");
             this.currentLife = this.currentLife - 1;
             if (this.currentLife == 0)
             {
                 DropLoot();
+                transform.position = new Vector3(-8, 2, 0);
+                this.currentLife = this.maxLife;
             }
         }
     }
