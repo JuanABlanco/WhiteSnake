@@ -91,7 +91,7 @@ public class PlayerController : Personaje {
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("ke");
-        if (col.tag == "Enemies")
+        if (col.tag == "Enemy")
         {
 
             this.currentLife = this.currentLife - 1;
