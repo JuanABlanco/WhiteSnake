@@ -21,6 +21,7 @@ public class PlayerController : Personaje {
     {
         this.maxLife = 3;
         this.currentLife = this.maxLife;
+        this.origen = transform.position;
     }
     // Use this for initialization
     void Start () {
@@ -85,7 +86,7 @@ public class PlayerController : Personaje {
     //Respawn del personaje
     void OnBecameInvisible()
     {
-        transform.position = new Vector3(-8, 2, 0);
+        transform.position = this.origen;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -98,7 +99,7 @@ public class PlayerController : Personaje {
             if (this.currentLife == 0)
             {
                 DropLoot();
-                transform.position = new Vector3(-8, 2, 0);
+                transform.position = this.origen;
                 this.currentLife = this.maxLife;
             }
         }
