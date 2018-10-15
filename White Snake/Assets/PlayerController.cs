@@ -72,7 +72,7 @@ public class PlayerController : Personaje {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-
+        //saltar
         if (jump) { 
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
@@ -82,6 +82,7 @@ public class PlayerController : Personaje {
 
     }
 
+    //Respawn del personaje
     void OnBecameInvisible()
     {
         transform.position = new Vector3(-8, 2, 0);
@@ -101,6 +102,7 @@ public class PlayerController : Personaje {
         }
     }
 
+    //Ataque del enemigo
     public void EnemyKnockBack(float enemyPosX)
     {
         jump = true;

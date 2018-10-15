@@ -7,6 +7,7 @@ TextureImporter:
     21300004: Miranda_sprite_attack_3
     21300006: Miranda_sprite_attack_4
     21300008: Miranda_sprite_attack_5
+    21300010: Miranda_sprite_attack_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -111,6 +112,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: Miranda_sprite_attack_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1c5d85fc075de44b3c0ea55468513c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Miranda_sprite_attack_1
       rect:
         serializedVersion: 2
@@ -125,7 +146,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3721bb515bf0caa4f9ff95fcb88af116
+      spriteID: a9731fcc134409842956f40b98caf445
       vertices: []
       indices: 
       edges: []
@@ -145,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b73b7f89f1766248afec5aa1933b500
+      spriteID: 9b33d524024ba4549beff0369f9a9d09
       vertices: []
       indices: 
       edges: []
@@ -157,7 +178,7 @@ TextureImporter:
         x: 10
         y: 130
         width: 29
-        height: 62
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,7 +186,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4a783233ceec044ea9869db3e490ffe
+      spriteID: 79f65485d7b7d114791a58064a37d9e9
       vertices: []
       indices: 
       edges: []
@@ -185,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 426e6f7480a119b419ee98f0c8175216
+      spriteID: 53e75362f5a299043bcc9eceeb19008f
       vertices: []
       indices: 
       edges: []
@@ -205,7 +226,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d7c6258b1626f342ae658a7d25c0d26
+      spriteID: ec7ce54a2ddfd8643a3130cd6acbe9d3
       vertices: []
       indices: 
       edges: []
