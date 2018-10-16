@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,4 +14,12 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnTriggerEnter2D (Collider2D cuerpo)
+    {
+        if (cuerpo.tag == "Player")
+        {
+            SceneManager.LoadScene("Boss_Act_1");
+        }
+    }
 }
