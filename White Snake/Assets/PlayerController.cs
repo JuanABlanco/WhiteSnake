@@ -6,16 +6,17 @@ public class PlayerController : Personaje {
 
     //Variables
 
-    public float maxSpeed = 15f; //Velocidad max
-    public float speed = 2f; //Velocidad
+    public float maxSpeed = 15f; 
+    public float speed = 2f; 
     public bool grounded;
-    public float jumpPower = 25f; //Fuerza de salto
+    public float jumpPower = 25f; 
 
-    private Rigidbody2D rb2d; //Cuerpo rigido
+    private Rigidbody2D rb2d; 
     private Animator anim;
     private SpriteRenderer spr;
     private bool jump;
     private bool movement = true;
+    private bool estoyAtacando = false;
 
     void Awake()
     {
@@ -38,16 +39,21 @@ public class PlayerController : Personaje {
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
 
+        //saltar
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded){
 
             jump = true;
 
         }
 
-		
-	}
 
-    private void FixedUpdate()
+
+
+    }
+
+    
+
+private void FixedUpdate()
     {
 
         float h = Input.GetAxis("Horizontal");
@@ -73,13 +79,30 @@ public class PlayerController : Personaje {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        //saltar
+        
         if (jump) { 
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
         }
 
         //Debug.Log(rb2d.velocity.x);
+
+
+
+        //Atacar
+        if (!estoyAtacando && Input.GetKey(KeyCode.LeftControl))
+        {
+            Ataque();
+        }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack") && estoyAtacando && !Input.GetKey(KeyCode.LeftControl)) {
+            estoyAtacando = false;
+        }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Base Layer.Player_Attack") && !estoyAtacando )
+        {
+            estoyAtacando = true;
+        }
 
     }
 
@@ -126,5 +149,16 @@ public class PlayerController : Personaje {
     {
         movement = true;
         spr.color = Color.white;
+    }
+
+    //Atacar
+    void Ataque()
+    {
+        if (!estoyAtacando && anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack"))
+        {
+            anim.SetTrigger("Ataque");
+            
+        }
+        
     }
 }

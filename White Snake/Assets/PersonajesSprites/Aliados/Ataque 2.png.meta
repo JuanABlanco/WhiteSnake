@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 0634acfafdd9b574eaad43c061d454c9
+guid: 9008cc24c9b59d5489a8559c971d7410
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Miranda_sprite_attack_1
-    21300002: Miranda_sprite_attack_2
-    21300004: Miranda_sprite_attack_3
-    21300006: Miranda_sprite_attack_4
-    21300008: Miranda_sprite_attack_5
-    21300010: Miranda_sprite_attack_0
+    21300000: Ataque 2_1
+    21300002: Ataque 2_2
+    21300004: Ataque 2_3
+    21300006: Ataque 2_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -37,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -49,8 +47,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -69,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -80,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -91,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -102,7 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,121 +110,81 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Miranda_sprite_attack_0
+      name: Ataque 2_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a1c5d85fc075de44b3c0ea55468513c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Miranda_sprite_attack_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 130
+        x: 93
+        y: 111
         width: 29
-        height: 64
+        height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9731fcc134409842956f40b98caf445
+      spriteID: 7e5a3436053db1d4193aa43c42a8aa9c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miranda_sprite_attack_2
+      name: Ataque 2_2
       rect:
         serializedVersion: 2
-        x: 154
-        y: 130
+        x: 21
+        y: 112
         width: 29
-        height: 64
+        height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b33d524024ba4549beff0369f9a9d09
+      spriteID: 28dc4d51fc1c66e4e987fac7098f635b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miranda_sprite_attack_3
+      name: Ataque 2_3
       rect:
         serializedVersion: 2
-        x: 10
-        y: 130
-        width: 29
-        height: 46
+        x: 19
+        y: 9
+        width: 33
+        height: 79
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79f65485d7b7d114791a58064a37d9e9
+      spriteID: a317261521d0d0547a5e6683e9f70b50
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miranda_sprite_attack_4
+      name: Ataque 2_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 22
-        width: 47
-        height: 64
+        x: 74
+        y: 8
+        width: 67
+        height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53e75362f5a299043bcc9eceeb19008f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Miranda_sprite_attack_5
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 22
-        width: 39
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec7ce54a2ddfd8643a3130cd6acbe9d3
+      spriteID: 8e94644015d8be24ab1f18b3766b6621
       vertices: []
       indices: 
       edges: []
@@ -234,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 503c1f22fdf0cf84c9cac3a9975ca243
+    spriteID: 94a80e8973013c448a2b192b8d86969d
     vertices: []
     indices: 
     edges: []
