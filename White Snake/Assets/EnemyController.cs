@@ -55,6 +55,7 @@ public class EnemyController : MonoBehaviour {
             } else
             {
                 col.SendMessage("EnemyKnockBack", transform.position.x);
+                
             }
             
         }
