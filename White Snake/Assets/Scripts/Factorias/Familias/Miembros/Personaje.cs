@@ -10,6 +10,7 @@ public class Personaje : MonoBehaviour {
     public List<GameObject> invetario;
     public int baseDamage;
     public int currentDamage;
+    public Vector3 origen;
 
     public void Move() { }
 

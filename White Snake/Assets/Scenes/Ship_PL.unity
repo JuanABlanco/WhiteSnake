@@ -2405,10 +2405,14 @@ Transform:
   m_GameObject: {fileID: 2092719327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -8.9, y: 2.1, z: 2}
 =======
   m_LocalPosition: {x: 5.3, y: 22.7, z: 2}
 >>>>>>> 67966c26dd51b46cbd9943d064f303e938f28320
+=======
+  m_LocalPosition: {x: -8.84, y: 1.53, z: 2}
+>>>>>>> ae3bd4bb6ab5a4c941f7c98b2094747de5b9d466
   m_LocalScale: {x: 1, y: 0.97110003, z: 1}
   m_Children:
   - {fileID: 930224169}
@@ -2431,6 +2435,7 @@ MonoBehaviour:
   invetario: []
   baseDamage: 0
   currentDamage: 0
+  origen: {x: 0, y: 0, z: 0}
   maxSpeed: 7.5
   speed: 90
   grounded: 0
