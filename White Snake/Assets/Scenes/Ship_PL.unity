@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 2092719327}
-  minCamPos: {x: 8.5, y: 8}
+  minCamPos: {x: 7.5, y: 7}
   maxCamPos: {x: 65.5, y: 78}
   smoothTime: 0.2
 --- !u!20 &519420031
@@ -1860,6 +1860,10 @@ Prefab:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4763175930526490, guid: ddff4bf3181aad14fbe01db9efcfc881, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddff4bf3181aad14fbe01db9efcfc881, type: 2}
   m_IsPrefabAsset: 0
@@ -2517,7 +2521,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092719327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.07, y: 75.93, z: 2}
+  m_LocalPosition: {x: -9, y: 1.7, z: 2}
   m_LocalScale: {x: 1, y: 0.97110003, z: 1}
   m_Children:
   - {fileID: 930224169}
