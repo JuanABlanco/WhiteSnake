@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8088b7b4554d3274db2922a550e43ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow: {fileID: 0}
+  follow: {fileID: 799958281}
   minCamPos: {x: 10, y: -7}
   maxCamPos: {x: 20, y: 5}
   smoothTime: 0.2
