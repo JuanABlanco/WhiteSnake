@@ -46,21 +46,26 @@ public class EnemyController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
 
+        if (col.gameObject.tag == "Espada")
+        {
+            
+                
+                Destroy(gameObject, 0.1f);
+            }
+
+
         if (col.gameObject.tag == "Player")
         {
-            float yOffset = 2f;
-            if (transform.position.y + yOffset < col.transform.position.y)
-            {
-                Destroy(gameObject);
-            } else
-            {
-                col.SendMessage("EnemyKnockBack", transform.position.x);
-                
-            }
+
+            col.SendMessage("EnemyKnockBack", transform.position.x);
             
         }
-        
+
     }
+
+  
+
+
 
 
 }

@@ -46,12 +46,7 @@ public class PlayerController : Personaje {
 
         }
 
-
-
-
     }
-
-    
 
 private void FixedUpdate()
     {
@@ -90,16 +85,17 @@ private void FixedUpdate()
 
 
         //Atacar
-        if (!estoyAtacando && Input.GetKey(KeyCode.LeftControl))
+        if (!estoyAtacando && Input.GetKeyDown(KeyCode.LeftControl))
         {
             Ataque();
+            
         }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack") && estoyAtacando && !Input.GetKey(KeyCode.LeftControl)) {
+        if (anim.GetCurrentAnimatorStateInfo(1).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack") && estoyAtacando && !Input.GetKey(KeyCode.LeftControl)) {
             estoyAtacando = false;
         }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Base Layer.Player_Attack") && !estoyAtacando )
+        if (anim.GetCurrentAnimatorStateInfo(1).fullPathHash == Animator.StringToHash("Base Layer.Player_Attack") && !estoyAtacando )
         {
             estoyAtacando = true;
         }
@@ -133,12 +129,12 @@ private void FixedUpdate()
     {
         jump = true;
         float side = Mathf.Sign(enemyPosX - transform.position.x);
-
-        rb2d.AddForce(Vector2.left * side * jumpPower, ForceMode2D.Impulse);
+        
+        rb2d.AddForce(Vector2.left * side * (jumpPower - 10 ) , ForceMode2D.Impulse);
 
         movement = false;
 
-        Invoke("EnableMovement", 0.7f);
+        Invoke("EnableMovement", 0.5f);
 
         Color color = new Color(255/255f, 106/255f, 0f);
 
