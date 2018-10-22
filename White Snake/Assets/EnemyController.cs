@@ -51,10 +51,7 @@ public class EnemyController : MonoBehaviour {
             
                 
                 Destroy(gameObject, 0.1f);
-            }
-
-
-        if (col.gameObject.tag == "Player")
+        } else if (col.gameObject.tag == "Player")
         {
 
             col.SendMessage("EnemyKnockBack", transform.position.x);
