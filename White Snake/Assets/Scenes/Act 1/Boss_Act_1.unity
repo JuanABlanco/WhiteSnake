@@ -930,6 +930,38 @@ Prefab:
       propertyPath: Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1981377654093000, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311656193667464, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667598717251784, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962636474663894, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835814330521744, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766032656142318, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835814330521744, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766032656142318, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b7c6b494ab5c134caee4d9280676c77, type: 2}
   m_IsPrefabAsset: 0
