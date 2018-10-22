@@ -106,12 +106,13 @@ private void FixedUpdate()
     void OnBecameInvisible()
     {
         transform.position = this.origen;
+        this.currentLife = this.maxLife;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         
-        if (col.tag == "Enemy" )
+       /* if (col.tag == "Enemy" )
         {
             Debug.Log("ke");
             this.currentLife = this.currentLife - 1;
@@ -121,6 +122,19 @@ private void FixedUpdate()
                 transform.position = this.origen;
                 this.currentLife = this.maxLife;
             }
+        }*/
+    }
+
+    //Mwtodo que va reduciendo la vida del personaje
+    void QuitarVida()
+    {
+        Debug.Log("ke");
+        this.currentLife = this.currentLife - 1;
+        if (this.currentLife == 0)
+        {
+            DropLoot();
+            transform.position = this.origen;
+            this.currentLife = this.maxLife;
         }
     }
 

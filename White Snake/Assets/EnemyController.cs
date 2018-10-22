@@ -48,15 +48,20 @@ public class EnemyController : MonoBehaviour {
 
         if (col.gameObject.tag == "Espada")
         {
-            
-                
-                Destroy(gameObject, 0.1f);
+            Destroy(gameObject, 0.1f);
+
         } else if (col.gameObject.tag == "Player")
         {
 
-            col.SendMessage("EnemyKnockBack", transform.position.x);
+            col.SendMessage("EnemyKnockBack", this.transform.position.x);
+
+            col.SendMessage("QuitarVida");
             
         }
+
+
+
+
 
     }
 
