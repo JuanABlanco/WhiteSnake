@@ -971,7 +971,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 500, y: 500}
+  m_ReferenceResolution: {x: 200, y: 300}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1122,10 +1122,10 @@ RectTransform:
   m_Father: {fileID: 479835494}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -76.29999, y: -166.4}
-  m_SizeDelta: {x: -530.5, y: 62.89}
+  m_AnchorMin: {x: 0.092362225, y: 0.52666664}
+  m_AnchorMax: {x: 0.90361696, y: 0.52666664}
+  m_AnchoredPosition: {x: 2.4099731, y: -117.28}
+  m_SizeDelta: {x: 4.82, y: 81.445}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600088198
 MonoBehaviour:
@@ -2547,6 +2547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf5106fe607f174080b7d4c6ffea2a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drop: 1
 --- !u!1 &1748879082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,7 +2925,7 @@ GameObject:
   - component: {fileID: 2106276293}
   - component: {fileID: 2106276292}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: DioImpostor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

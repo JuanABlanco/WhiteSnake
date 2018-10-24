@@ -9,7 +9,8 @@ public class PlayerController : Personaje {
     public float maxSpeed = 15f; 
     public float speed = 2f; 
     public bool grounded;
-    public float jumpPower = 25f; 
+    public float jumpPower = 25f;
+    public static PlayerController sharedInstance;
 
     private Rigidbody2D rb2d; 
     private Animator anim;
@@ -18,11 +19,14 @@ public class PlayerController : Personaje {
     private bool movement = true;
     private bool estoyAtacando = false;
 
+
+
     void Awake()
     {
         this.maxLife = 3;
         this.currentLife = this.maxLife;
         this.origen = transform.position;
+        PlayerController.sharedInstance = this;
     }
     // Use this for initialization
     void Start () {

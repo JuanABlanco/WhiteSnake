@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Espada : MonoBehaviour {
+public class Espada : Objeto {
 
 	// Use this for initialization
 	void Start () {
-		
+        this.drop = false;
 	}
 	
 	// Update is called once per frame

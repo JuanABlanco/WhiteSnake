@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class Objeto : MonoBehaviour {
     public bool drop = true;
-    //Crea una copia del objeto entrando a sus atributos y copiandolos 
-    public Objeto (Objeto fuente)
-    {
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            GetLooted();
+        }
+    }
+
+    //Metodo que se encarga de ayudar al jugador a lootear el objeto
+    void GetLooted()
+    {
+        PlayerController.sharedInstance.invetario.Add(gameObject);
+        this.gameObject.SetActive(false);
+        this.transform.SetParent(PlayerController.sharedInstance.transform);
     }
 
 }

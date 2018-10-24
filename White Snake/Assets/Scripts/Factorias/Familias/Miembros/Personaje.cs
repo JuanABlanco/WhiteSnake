@@ -29,7 +29,10 @@ public class Personaje : MonoBehaviour {
             if (this.invetario[dropedIndex].GetComponent<Objeto>().drop)
             {
                 GameObject droped = this.invetario[dropedIndex];
-                Instantiate(droped, transform.position, Quaternion.identity);
+                droped.SetActive(true);
+                droped.transform.position = transform.position;
+                droped.transform.SetParent(null);
+                //Instantiate(droped, transform.position, Quaternion.identity);
                 this.invetario.RemoveAt(dropedIndex);
             }
 
