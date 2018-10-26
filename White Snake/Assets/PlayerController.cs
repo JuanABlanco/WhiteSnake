@@ -11,6 +11,8 @@ public class PlayerController : Personaje {
     public bool grounded;
     public float jumpPower = 25f;
     public static PlayerController sharedInstance;
+    public GameObject lifeBar;
+    public List<GameObject> hearts;
 
     private Rigidbody2D rb2d; 
     private Animator anim;
@@ -24,7 +26,6 @@ public class PlayerController : Personaje {
     void Awake()
     {
         this.maxLife = 3;
-        this.currentLife = this.maxLife;
         this.origen = transform.position;
         PlayerController.sharedInstance = this;
     }
@@ -34,7 +35,10 @@ public class PlayerController : Personaje {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
-
+        for (int i = 0; i < this.maxLife; i++)
+        {
+            AgregarCorazon();
+        }
     }
 	
 	// Update is called once per frame
@@ -52,7 +56,7 @@ public class PlayerController : Personaje {
 
     }
 
-private void FixedUpdate()
+    private void FixedUpdate()
     {
 
         float h = Input.GetAxis("Horizontal");
@@ -110,7 +114,11 @@ private void FixedUpdate()
     void OnBecameInvisible()
     {
         transform.position = this.origen;
-        this.currentLife = this.maxLife;
+        int limite = this.maxLife - this.currentLife;
+        for (int i = 0; i < limite; i++)
+        {
+            AgregarCorazon();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -129,16 +137,19 @@ private void FixedUpdate()
         }*/
     }
 
-    //Mwtodo que va reduciendo la vida del personaje
+    //Metodo que va reduciendo la vida del personaje
     void QuitarVida()
     {
         Debug.Log("ke");
-        this.currentLife = this.currentLife - 1;
+        PerderCorazon();
         if (this.currentLife == 0)
         {
             DropLoot();
             transform.position = this.origen;
-            this.currentLife = this.maxLife;
+            for(int i = 0; i < this.maxLife; i++)
+            {
+                AgregarCorazon();
+            }
         }
     }
 
@@ -174,5 +185,44 @@ private void FixedUpdate()
             
         }
         
+    }
+
+    /*
+     *  La siguiente seccion de codigo se encarga del control de la barra de vida 
+     *
+     */
+
+    /*
+     * Nombre del metodo: AgregarCorazon
+     * Funcion: Este metodo instancia un corazon en la barra de vida del HUD y aumentar la vida del jugador 
+     * Parametros: Ninguno
+     */
+    public void AgregarCorazon()
+    {
+        GameObject corazon = Instantiate(this.lifeBar);
+        this.hearts.Add(corazon);
+        corazon.transform.name = "Heart";
+        Debug.Log("Naci puto");
+        
+
+        corazon.transform.parent = this.lifeBar.transform.parent;
+        corazon.transform.position = this.lifeBar.transform.position + new Vector3(-1.5f*this.hearts.Count, 0f, 0f);
+        corazon.transform.localScale = new Vector3(10f, 10f, 10f);
+
+        this.currentLife += 1;
+        
+    }
+
+    /*
+     * Nombre del metodo: PerderCorazon
+     * Funcion: Este metodo elimina un corazon de la barra de vida del HUD y disminuye la vida del jugador 
+     * Parametros: Ninguno
+     */
+
+    public void PerderCorazon()
+    {
+        Destroy((GameObject)this.hearts[this.hearts.Count-1]);
+        this.hearts.RemoveAt(this.hearts.Count - 1);
+        this.currentLife -= 1;
     }
 }
