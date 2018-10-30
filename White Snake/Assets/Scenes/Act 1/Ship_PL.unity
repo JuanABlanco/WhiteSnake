@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a157ba41ba8dcd044b11cd74f28153ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonName: Horizontal
+  ButtonName: Fire1
 --- !u!225 &423117567
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2361,7 +2361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AxisName: Vertical
-  Value: 1
+  Value: 0.6
 --- !u!114 &1014130684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,8 +3806,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &2092719330
-CircleCollider2D:
+--- !u!60 &2092719330
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -3816,11 +3816,43 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18404388, y: 0.6850084}
-  serializedVersion: 2
-  m_Radius: 1.0965729
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 4.8}
+    newSize: {x: 3.2, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.73766035, y: 1.956579}
+      - {x: 0.6034113, y: 2.1342285}
+      - {x: 0.35001612, y: 2.1342282}
+      - {x: -0.010623634, y: 2.10308}
+      - {x: -1, y: 1.1}
+      - {x: -1, y: 0.6}
+      - {x: -0.64078164, y: 0.06850882}
+      - {x: -0.63226485, y: -0.08566054}
+      - {x: -0.6312294, y: -0.42488283}
+      - {x: -0.95965135, y: -0.85147893}
+      - {x: -0.9768996, y: -1.55624}
+      - {x: -0.8494139, y: -1.8201807}
+      - {x: 0.8559278, y: -1.8850485}
+      - {x: 0.9286096, y: -1.680195}
+      - {x: 1.0175422, y: -1.3060011}
+      - {x: 0.8425437, y: -0.6992455}
+      - {x: 0.95974994, y: 0.26464608}
+      - {x: 0.6916851, y: 0.39055985}
+      - {x: 0.6334766, y: 0.837065}
+      - {x: 0.6328972, y: 1.3775729}
+      - {x: 0.6498124, y: 1.4831545}
+      - {x: 0.6504419, y: 1.6713299}
+      - {x: 0.72437805, y: 1.7331544}
 --- !u!212 &2092719331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3874,7 +3906,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092719327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.27, y: 1.98, z: 2}
+  m_LocalPosition: {x: -0.61, y: 1.71, z: 2}
   m_LocalScale: {x: 1, y: 0.97110003, z: 1}
   m_Children:
   - {fileID: 930224169}
@@ -3905,6 +3937,7 @@ MonoBehaviour:
   jumpPower: 45
   lifeBar: {fileID: 1747952936}
   hearts: []
+  a: {fileID: 423117568}
 --- !u!1 &2106276291
 GameObject:
   m_ObjectHideFlags: 0

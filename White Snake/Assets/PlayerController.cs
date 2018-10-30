@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : Personaje {
 
@@ -9,15 +10,17 @@ public class PlayerController : Personaje {
     public float maxSpeed = 15f; 
     public float speed = 2f; 
     public bool grounded;
-    public float jumpPower = 25f;
+    public float jumpPower = 6f;
     public static PlayerController sharedInstance;
     public GameObject lifeBar;
     public List<GameObject> hearts;
+    public Button a;
+    
 
     private Rigidbody2D rb2d; 
     private Animator anim;
     private SpriteRenderer spr;
-    private bool jump;
+    private bool jump = false;
     private bool movement = true;
     private bool estoyAtacando = false;
 
@@ -28,6 +31,7 @@ public class PlayerController : Personaje {
         this.maxLife = 3;
         this.origen = transform.position;
         PlayerController.sharedInstance = this;
+        
     }
     // Use this for initialization
     void Start () {
@@ -48,9 +52,10 @@ public class PlayerController : Personaje {
         anim.SetBool("Grounded", grounded);
 
         //saltar
-        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded){
+        if ( (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisMobile("Vertical") != 0) && grounded){
 
             jump = true;
+            Debug.Log(Input.GetAxisMobile("Vertical"));
 
         }
 
@@ -59,7 +64,7 @@ public class PlayerController : Personaje {
     private void FixedUpdate()
     {
 
-        float h = Input.GetAxis("Horizontal");
+        float h = Input.GetAxisMobile("Horizontal");
 
         if (!movement)
         {
@@ -83,9 +88,17 @@ public class PlayerController : Personaje {
         }
 
         
-        if (jump) { 
-            rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        if (jump) {
+            float v = Input.GetAxisMobile("Vertical");
+            rb2d.AddForce(Vector2.up * jumpPower * v, ForceMode2D.Impulse);
             jump = false;
+
+            
+
+            /*rb2d.AddForce(Vector2.up * v * jumpPower);
+            jump = false;*/
+            Debug.Log(ForceMode2D.Impulse);
+
         }
 
         //Debug.Log(rb2d.velocity.x);
@@ -93,7 +106,7 @@ public class PlayerController : Personaje {
 
 
         //Atacar
-        if (!estoyAtacando && Input.GetKeyDown(KeyCode.LeftControl))
+        if (!estoyAtacando && Input.GetButtonDownMobile("left ctrl"))
         {
             Ataque();
             
@@ -179,8 +192,9 @@ public class PlayerController : Personaje {
     //Atacar
     void Ataque()
     {
-        if (!estoyAtacando && anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack"))
+        if (!estoyAtacando && anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack") && Input.GetButtonDownMobile("left ctrl"))
         {
+            Debug.Log("Hey");
             anim.SetTrigger("Ataque");
             
         }
