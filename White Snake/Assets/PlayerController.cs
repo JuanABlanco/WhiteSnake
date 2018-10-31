@@ -48,7 +48,8 @@ public class PlayerController : Personaje {
         anim.SetBool("Grounded", grounded);
 
         //saltar
-        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded){
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisMobile("Vertical") !=0 && grounded)
+        {
 
             jump = true;
 
@@ -83,8 +84,11 @@ public class PlayerController : Personaje {
         }
 
         
-        if (jump) { 
-            rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        if (jump) {
+
+            float v = Input.GetAxisMobile("Vertical");
+
+            rb2d.AddForce(Vector2.up * jumpPower * v, ForceMode2D.Impulse);
             jump = false;
         }
 
@@ -93,7 +97,7 @@ public class PlayerController : Personaje {
 
 
         //Atacar
-        if (!estoyAtacando && Input.GetKeyDown(KeyCode.LeftControl))
+        if (!estoyAtacando && Input.GetKeyDown(KeyCode.LeftControl) )
         {
             Ataque();
             
@@ -138,7 +142,7 @@ public class PlayerController : Personaje {
     }
 
     //Metodo que va reduciendo la vida del personaje
-    void QuitarVida()
+    public void QuitarVida()
     {
         Debug.Log("ke");
         PerderCorazon();

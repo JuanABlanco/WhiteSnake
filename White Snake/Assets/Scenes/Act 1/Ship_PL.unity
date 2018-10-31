@@ -1293,7 +1293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -102, y: 107}
+  m_AnchoredPosition: {x: -316, y: 101}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &423117566
@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a157ba41ba8dcd044b11cd74f28153ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonName: Horizontal
+  ButtonName: Fire1
 --- !u!225 &423117567
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1848,7 +1848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50.00003, y: 49.999985}
+  m_AnchoredPosition: {x: -264.00003, y: 43.999985}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735686326
@@ -1994,7 +1994,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.491161
+  orthographic size: 9.859695
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 2092719327}
-  minCamPos: {x: 12.2, y: 7}
+  minCamPos: {x: 7, y: 7.2}
   maxCamPos: {x: 1400, y: 1400}
   smoothTime: 0.2
 --- !u!81 &789647270
@@ -3535,7 +3535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 301.1, y: 159.1}
+  m_AnchoredPosition: {x: 231, y: 158}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1748879082
@@ -3806,8 +3806,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &2092719330
-CircleCollider2D:
+--- !u!60 &2092719330
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -3816,11 +3816,35 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18404388, y: 0.6850084}
-  serializedVersion: 2
-  m_Radius: 1.0965729
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 4.8}
+    newSize: {x: 3.2, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7252331, y: 2.0922284}
+      - {x: 0.025233746, y: 2.1441712}
+      - {x: -1, y: 1.1}
+      - {x: -1, y: 0.6}
+      - {x: -1.0908368, y: -0.84682465}
+      - {x: -1.0625544, y: -1.2322441}
+      - {x: -1.0253775, y: -1.4727378}
+      - {x: -0.7201816, y: -1.8736777}
+      - {x: 0.60486495, y: -1.9739358}
+      - {x: 1.1135383, y: -1.6453341}
+      - {x: 1.1562495, y: -1.3600509}
+      - {x: 1.2045435, y: -1.1081359}
+      - {x: 1.1671631, y: -0.6336007}
+      - {x: 1.0975276, y: 0.23596834}
+      - {x: 0.9617063, y: 1.2359662}
 --- !u!212 &2092719331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3874,7 +3898,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092719327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.27, y: 1.98, z: 2}
+  m_LocalPosition: {x: 0.4, y: 21.67, z: 2}
   m_LocalScale: {x: 1, y: 0.97110003, z: 1}
   m_Children:
   - {fileID: 930224169}
@@ -3902,7 +3926,7 @@ MonoBehaviour:
   maxSpeed: 7.5
   speed: 90
   grounded: 0
-  jumpPower: 45
+  jumpPower: 25
   lifeBar: {fileID: 1747952936}
   hearts: []
 --- !u!1 &2106276291

@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour {
 
     public float maxSpeed = 7f; //Velocidad max
     public float speed = 12f; //Velocidad
+    
+        
 
     private Rigidbody2D rb2d;
 
@@ -53,10 +55,14 @@ public class EnemyController : MonoBehaviour {
         } else if (col.gameObject.tag == "Player")
         {
 
-            col.SendMessage("EnemyKnockBack", this.transform.position.x);
+            // col.SendMessage("EnemyKnockBack", this.transform.position.x);
 
-            col.SendMessage("QuitarVida");
+            // col.SendMessage("QuitarVida");
+
+            PlayerController.sharedInstance.EnemyKnockBack(this.transform.position.x);
+            PlayerController.sharedInstance.QuitarVida();
             
+
         }
 
 
