@@ -9,7 +9,7 @@ public class PlayerController : Personaje {
     public float maxSpeed = 15f; 
     public float speed = 2f; 
     public bool grounded;
-    public float jumpPower = 25f;
+    public float jumpPower = 27f;
     public static PlayerController sharedInstance;
     public GameObject lifeBar;
     public List<GameObject> hearts;
