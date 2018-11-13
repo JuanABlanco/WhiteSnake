@@ -181,7 +181,7 @@ public class PlayerController : Personaje {
     }
 
     //Atacar
-    void Ataque()
+    public void Ataque()
     {
         if (!estoyAtacando && anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack"))
         {
