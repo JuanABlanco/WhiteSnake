@@ -86,13 +86,9 @@ public class PlayerController : Personaje {
         
         if (jump) {
 
-            float v = Input.GetAxisMobile("Vertical");
-
-            rb2d.AddForce(Vector2.up * jumpPower * v, ForceMode2D.Impulse);
-            jump = false;
+            //float v = Input.GetAxisMobile("Vertical");
+            Jump();
         }
-
-        //Debug.Log(rb2d.velocity.x);
 
 
 
@@ -112,6 +108,16 @@ public class PlayerController : Personaje {
             estoyAtacando = true;
         }
 
+    }
+
+    //Salto
+    public void Jump()
+    {
+        if (this.grounded)
+        {
+            rb2d.AddForce(Vector2.up * jumpPower* 2, ForceMode2D.Impulse);
+            jump = false;
+        }
     }
 
     //Respawn del personaje
