@@ -23,6 +23,7 @@ public class PlayerController : Personaje {
 
 
 
+
     void Awake()
     {
         this.maxLife = 3;
@@ -223,8 +224,5 @@ public class PlayerController : Personaje {
         this.hearts.RemoveAt(this.hearts.Count - 1);
         this.currentLife -= 1;
     }
-
-    // La siguiente zona de codigo se encarga de todo lo relacionado a ataques especiales 
-
 
 }
