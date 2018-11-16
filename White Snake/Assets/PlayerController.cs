@@ -110,7 +110,9 @@ public class PlayerController : Personaje {
 
     }
 
-    //Salto
+    /// <summary>
+    /// Esta funcion se encarga del salto del personaje
+    /// </summary>
     public void Jump()
     {
         if (this.grounded)
@@ -120,7 +122,9 @@ public class PlayerController : Personaje {
         }
     }
 
-    //Respawn del personaje
+    /// <summary>
+    /// Esta funcion se encarga de recolocar al personaje en su posicion inicial cuando no es visible para la camara 
+    /// </summary>
     void OnBecameInvisible()
     {
         transform.position = this.origen;
@@ -131,26 +135,11 @@ public class PlayerController : Personaje {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        
-       /* if (col.tag == "Enemy" )
-        {
-            Debug.Log("ke");
-            this.currentLife = this.currentLife - 1;
-            if (this.currentLife == 0)
-            {
-                DropLoot();
-                transform.position = this.origen;
-                this.currentLife = this.maxLife;
-            }
-        }*/
-    }
-
-    //Metodo que va reduciendo la vida del personaje
+    /// <summary>
+    /// Metodo que se encarga de restarle vida al personaje 
+    /// </summary>
     public void QuitarVida()
     {
-        Debug.Log("ke");
         PerderCorazon();
         if (this.currentLife == 0)
         {
@@ -163,7 +152,10 @@ public class PlayerController : Personaje {
         }
     }
 
-    //Ataque del enemigo
+    /// <summary>
+    /// Este metodo se encarga de toda la logica de la animacion cuando el personaje recibe daño
+    /// </summary>
+    /// <param name="enemyPosX"> Posicion en el eje X de la funte del daño</param>
     public void EnemyKnockBack(float enemyPosX)
     {
         jump = true;
@@ -179,14 +171,18 @@ public class PlayerController : Personaje {
 
         spr.color = color;
     } 
-
+    /// <summary>
+    /// Esta funcion se encarga de permitir el movimiento
+    /// </summary>
     void EnableMovement()
     {
         movement = true;
         spr.color = Color.white;
     }
 
-    //Atacar
+    /// <summary>
+    /// Este metodo se encarga de activar la animacion de ataque
+    /// </summary>
     public void Ataque()
     {
         if (!estoyAtacando && anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack"))
@@ -202,11 +198,8 @@ public class PlayerController : Personaje {
      *
      */
 
-    /*
-     * Nombre del metodo: AgregarCorazon
-     * Funcion: Este metodo instancia un corazon en la barra de vida del HUD y aumentar la vida del jugador 
-     * Parametros: Ninguno
-     */
+
+     ///<summary>Este metodo instancia un corazon en la barra de vida del HUD y aumentar la vida del jugador</summary> 
     public void AgregarCorazon()
     {
         GameObject corazon = Instantiate(this.lifeBar);
@@ -223,16 +216,15 @@ public class PlayerController : Personaje {
         
     }
 
-    /*
-     * Nombre del metodo: PerderCorazon
-     * Funcion: Este metodo elimina un corazon de la barra de vida del HUD y disminuye la vida del jugador 
-     * Parametros: Ninguno
-     */
-
+    /// <summary>Este metodo elimina un corazon de la barra de vida del HUD y disminuye la vida del jugador</summary>
     public void PerderCorazon()
     {
         Destroy((GameObject)this.hearts[this.hearts.Count-1]);
         this.hearts.RemoveAt(this.hearts.Count - 1);
         this.currentLife -= 1;
     }
+
+    // La siguiente zona de codigo se encarga de todo lo relacionado a ataques especiales 
+
+
 }
