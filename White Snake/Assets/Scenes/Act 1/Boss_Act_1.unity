@@ -2725,7 +2725,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3230,7 +3230,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -74.29999, y: -108.4}
-  m_SizeDelta: {x: 30, y: 40}
+  m_SizeDelta: {x: 35, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460997015
 MonoBehaviour:
@@ -3330,7 +3330,7 @@ GameObject:
   - component: {fileID: 1463556251}
   - component: {fileID: 1463556250}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3352,7 +3352,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -104.67999, y: -68.4}
-  m_SizeDelta: {x: 30, y: 40}
+  m_SizeDelta: {x: 35, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463556250
 MonoBehaviour:
@@ -3835,7 +3835,7 @@ RectTransform:
   m_GameObject: {fileID: 1675211603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000036, y: 1.000036, z: 1.000036}
+  m_LocalScale: {x: 1.2196438, y: 1.2196438, z: 1.2196438}
   m_Children:
   - {fileID: 702493088}
   m_Father: {fileID: 1150485001}
@@ -3843,7 +3843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3.4444}
   m_SizeDelta: {x: 664, y: 372}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675211605
@@ -4568,7 +4568,7 @@ RectTransform:
   m_GameObject: {fileID: 1867884769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.218, y: 1.218, z: 1.218}
   m_Children:
   - {fileID: 711663325}
   m_Father: {fileID: 1150485001}
@@ -4576,7 +4576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3.4262}
   m_SizeDelta: {x: 664, y: 372}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1882767422
