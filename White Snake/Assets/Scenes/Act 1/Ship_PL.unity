@@ -483,8 +483,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2092719333}
-        m_MethodName: PushingAttack
+      - m_Target: {fileID: 2092719335}
+        m_MethodName: Pushing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1646,7 +1646,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 359104709}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c4ef10c1ee5eec40bc2ea1745b70993, type: 3}
@@ -7079,6 +7079,7 @@ GameObject:
   - component: {fileID: 2092719333}
   - component: {fileID: 2092719330}
   - component: {fileID: 2092719334}
+  - component: {fileID: 2092719335}
   m_Layer: 8
   m_Name: Miranda
   m_TagString: Player
@@ -7342,6 +7343,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2092719335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092719327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62962bfaa56dec243ac5bb9982437b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 10000
+  loudness: 0
 --- !u!1 &2098068977
 GameObject:
   m_ObjectHideFlags: 0
