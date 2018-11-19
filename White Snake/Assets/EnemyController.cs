@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : Personaje {
 
     public float maxSpeed = 7f; //Velocidad max
     public float speed = 12f; //Velocidad
@@ -11,10 +11,22 @@ public class EnemyController : MonoBehaviour {
 
     private Rigidbody2D rb2d;
 
+    void Awake()
+    {
+        if(gameObject.name == "Boss")
+        {
+            this.maxLife = 90;
+        }
+        else
+        {
+            this.maxLife = 3;
+        }
+    }
     // Use this for initialization
     void Start () {
 
         rb2d = GetComponent<Rigidbody2D>();
+        this.currentLife = this.maxLife;
 
     }
 	
@@ -50,7 +62,12 @@ public class EnemyController : MonoBehaviour {
 
         if (col.gameObject.tag == "Espada")
         {
-            Destroy(gameObject, 0.1f);
+            this.currentLife -= PlayerController.sharedInstance.currentDamage;
+            if(this.currentLife <= 0)
+            {
+                Destroy(gameObject, 0.1f);
+            }
+            
 
         } else if (col.gameObject.tag == "Player")
         {

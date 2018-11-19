@@ -13,15 +13,17 @@ public class PushPower : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _audio = GetComponent<AudioSource>();
-        _audio.clip = Microphone.Start(null, true, 10, 44100);
-        _audio.loop = true;
-        _audio.mute = true;
+        _audio.clip = Microphone.Start(null, false, 10, 44100);
+        _audio.loop = false;
+        _audio.mute = false;
         while (!(Microphone.GetPosition(null) > 0)) { }
         _audio.Play();
+
     }
 
     // Update is called once per frame
     void Update () {
+        
         enemigos = GameObject.FindObjectsOfType<EnemyController>();
         loudness = GetAveragedVolume() * sensitivity;
         //Pushing();
@@ -43,6 +45,8 @@ public class PushPower : MonoBehaviour {
 
     private void Pushing()
     {
+        
+        
         foreach (EnemyController enemy in enemigos)
         {
             enemy.GetComponent<Rigidbody2D>().AddForce(((enemy.transform.position-transform.position)+new Vector3(0,5,0)) * (loudness / (enemy.transform.position - transform.position).sqrMagnitude) * 1000000, ForceMode2D.Impulse);

@@ -27,6 +27,7 @@ public class PlayerController : Personaje {
     void Awake()
     {
         this.maxLife = 3;
+        this.baseDamage = 1;
         this.origen = transform.position;
         PlayerController.sharedInstance = this;
     }
@@ -36,6 +37,7 @@ public class PlayerController : Personaje {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
+        this.currentDamage = this.baseDamage;
         for (int i = 0; i < this.maxLife; i++)
         {
             AgregarCorazon();

@@ -16,7 +16,10 @@ public class Personaje : MonoBehaviour {
 
     public void Spawn() { }
 
-    public void Die() { }
+    public void Die()
+    {
+        Destroy(gameObject, 0.1f);
+    }
 
     /* Como prerequisito de DropLoot debera estar en un if que observe si la lista drop no esta vacia
          
