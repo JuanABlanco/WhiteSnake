@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
+
 public class MovingPower : MonoBehaviour {
 
+    public static MovingPower sharedInstance;
+    float position;
     Timer timer;
     int tiempo = 0;
     EnemyController[] enemigos;
     ArrayList NBEnemy = new ArrayList();
 
+    void Awake()
+    {
+        MovingPower.sharedInstance = this;
+    }
     // Use this for initialization
     void Start () {
-		
-	}
+        position = Input.acceleration.x + Input.acceleration.y;
+        
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,7 +46,7 @@ public class MovingPower : MonoBehaviour {
         float posi = Input.acceleration.x + Input.acceleration.y;
         tiempo = 0;
         timer = new Timer();
-        timer.Interval = 1000;
+        timer.Interval = 2000;
         timer.Elapsed += Timer_Elapsed;
         timer.AutoReset = true;
         timer.Enabled = true;
@@ -48,8 +57,8 @@ public class MovingPower : MonoBehaviour {
         {
             if(ene != null)
             {
-                ene.Dañado((int)Mathf.Round(((Input.acceleration.x + Input.acceleration.y)-posi) / 5));
-                Debug.Log(((Input.acceleration.x + Input.acceleration.y) - posi) / 5);
+                ene.Dañado((int)(Mathf.Abs(position - posi)));
+                
                 ene.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 3, ForceMode2D.Impulse);
                 ene.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 6, ForceMode2D.Impulse);
                 ene.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 3, ForceMode2D.Impulse);
@@ -57,7 +66,7 @@ public class MovingPower : MonoBehaviour {
             
 
         }
-        if (tiempo > 5)
+        if (tiempo > 3)
         {
             timer.Enabled = false;
             timer.AutoReset = false;

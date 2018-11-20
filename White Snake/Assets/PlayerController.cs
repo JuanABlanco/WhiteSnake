@@ -27,7 +27,7 @@ public class PlayerController : Personaje {
     void Awake()
     {
         this.maxLife = 3;
-        this.baseDamage = 1;
+        this.baseDamage = 3;
         this.origen = transform.position;
         PlayerController.sharedInstance = this;
     }

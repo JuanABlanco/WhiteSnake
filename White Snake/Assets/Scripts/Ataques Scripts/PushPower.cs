@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class PushPower : MonoBehaviour {
 
+    public static PushPower sharedInstance;
     public float sensitivity = 1000000;
     public float loudness = 0;
     AudioSource _audio;
     EnemyController[] enemigos;
 
-
+    void Awake()
+    {
+        PushPower.sharedInstance = this;
+    }
 	// Use this for initialization
 	void Start () {
         _audio = GetComponent<AudioSource>();
         _audio.loop = true;
         _audio.mute = true;
         _audio.clip = Microphone.Start(null, true, 10, 44100);
-
         while (!(Microphone.GetPosition(null) > 0)) { }
     }
 

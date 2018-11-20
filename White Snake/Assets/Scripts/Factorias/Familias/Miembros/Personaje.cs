@@ -12,6 +12,8 @@ public class Personaje : MonoBehaviour {
     public int currentDamage;
     public Vector3 origen;
 
+    private int cenemigos;
+
     public void Move() { }
 
     public void Spawn() { }
@@ -19,7 +21,10 @@ public class Personaje : MonoBehaviour {
     public void Die()
     {
         Destroy(gameObject, 0.1f);
+        
     }
+
+    
 
     /* Como prerequisito de DropLoot debera estar en un if que observe si la lista drop no esta vacia
          

@@ -62,10 +62,10 @@ public class EnemyController : Personaje {
         Color original = this.GetComponent<SpriteRenderer>().color;
         this.currentLife -= PlayerController.sharedInstance.currentDamage;
         this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 0f);
-        this.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        this.GetComponent<Rigidbody2D>().AddForce(-this.transform.position.normalized*10, ForceMode2D.Impulse);
         if (this.currentLife <= 0)
         {
-            Destroy(gameObject, 0.1f);
+            this.Die();
         }
         this.GetComponent<SpriteRenderer>().color = original;
     }
@@ -79,7 +79,7 @@ public class EnemyController : Personaje {
             this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 0f);
             if (this.currentLife <= 0)
             {
-                Destroy(gameObject, 0.1f);
+                this.Die();
             }
             //this.GetComponent<SpriteRenderer>().color = original;
         }
