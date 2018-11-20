@@ -57,17 +57,41 @@ public class EnemyController : Personaje {
 
     }
 
+    public void Dañado()
+    {
+        Color original = this.GetComponent<SpriteRenderer>().color;
+        this.currentLife -= PlayerController.sharedInstance.currentDamage;
+        this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 0f);
+        this.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        if (this.currentLife <= 0)
+        {
+            Destroy(gameObject, 0.1f);
+        }
+        this.GetComponent<SpriteRenderer>().color = original;
+    }
+
+    public void Dañado(int daño)
+    {
+        if(daño > 0)
+        { 
+            //Color original = this.GetComponent<SpriteRenderer>().color;
+            this.currentLife -= daño;
+            this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 0f);
+            if (this.currentLife <= 0)
+            {
+                Destroy(gameObject, 0.1f);
+            }
+            //this.GetComponent<SpriteRenderer>().color = original;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.tag == "Espada")
         {
-            this.currentLife -= PlayerController.sharedInstance.currentDamage;
-            if(this.currentLife <= 0)
-            {
-                Destroy(gameObject, 0.1f);
-            }
-            
+
+            Dañado();
 
         } else if (col.gameObject.tag == "Player")
         {

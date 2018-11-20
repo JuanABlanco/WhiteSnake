@@ -13,12 +13,11 @@ public class PushPower : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _audio = GetComponent<AudioSource>();
-        _audio.clip = Microphone.Start(null, false, 10, 44100);
-        _audio.loop = false;
-        _audio.mute = false;
-        while (!(Microphone.GetPosition(null) > 0)) { }
-        _audio.Play();
+        _audio.loop = true;
+        _audio.mute = true;
+        _audio.clip = Microphone.Start(null, true, 10, 44100);
 
+        while (!(Microphone.GetPosition(null) > 0)) { }
     }
 
     // Update is called once per frame
@@ -31,6 +30,10 @@ public class PushPower : MonoBehaviour {
 
     float GetAveragedVolume()
     {
+        
+        
+        _audio.Play();
+
         float[] data = new float[256];
         float a = 0;
         //_audio.GetOutputData(data, 0);
