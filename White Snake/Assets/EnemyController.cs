@@ -15,7 +15,7 @@ public class EnemyController : Personaje {
     {
         if(gameObject.name == "Boss")
         {
-            this.maxLife = 90;
+            this.maxLife = 50;
         }
         else
         {
