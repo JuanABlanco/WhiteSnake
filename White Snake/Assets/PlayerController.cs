@@ -13,6 +13,8 @@ public class PlayerController : Personaje {
     public static PlayerController sharedInstance;
     public GameObject lifeBar;
     public List<GameObject> hearts;
+    public AudioClip[] efectos;
+    public AudioSource audios;
 
     private Rigidbody2D rb2d; 
     private Animator anim;
@@ -120,6 +122,7 @@ public class PlayerController : Personaje {
     {
         if (this.grounded)
         {
+            this.audios.PlayOneShot(this.efectos[0]);
             rb2d.AddForce(Vector2.up * jumpPower* 2, ForceMode2D.Impulse);
             jump = false;
         }
@@ -143,6 +146,7 @@ public class PlayerController : Personaje {
     /// </summary>
     public void QuitarVida()
     {
+        this.audios.PlayOneShot(this.efectos[2]);
         PerderCorazon();
         if (this.currentLife == 0)
         {
@@ -191,7 +195,7 @@ public class PlayerController : Personaje {
         if (!estoyAtacando && anim.GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.Player_Attack"))
         {
             anim.SetTrigger("Ataque");
-            
+            this.audios.PlayOneShot(this.efectos[1]);
         }
         
     }

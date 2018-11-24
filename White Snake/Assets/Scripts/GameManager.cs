@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public Text contador;
     public Button mic;
     public Button terremoto;
+    public static GameManager sharedInstance;
     int enemigosMuertos;
     int enemigosVivos;
     EnemyController[] enemigos;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         enemigos = GameObject.FindObjectsOfType<EnemyController>();
         enemigosVivos = enemigos.Length;
+        GameManager.sharedInstance = this;
 	}
 	
 	// Update is called once per frame
