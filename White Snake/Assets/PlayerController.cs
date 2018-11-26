@@ -13,7 +13,7 @@ public class PlayerController : Personaje {
     public static PlayerController sharedInstance;
     public GameObject lifeBar;
     public List<GameObject> hearts;
-    public AudioClip[] efectos;
+    public AudioClip[] efectos; //Orden: Salto, Ataque, Daño recibido,
     public AudioSource audios;
 
     private Rigidbody2D rb2d; 

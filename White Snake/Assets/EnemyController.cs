@@ -68,8 +68,9 @@ public class EnemyController : Personaje {
         Grito();
         Color original = this.GetComponent<SpriteRenderer>().color;
         this.currentLife -= PlayerController.sharedInstance.currentDamage;
-        this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 0f);
-        this.GetComponent<Rigidbody2D>().AddForce(-this.transform.position.normalized*10, ForceMode2D.Impulse);
+        this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 1f);
+        this.GetComponent<Rigidbody2D>().rotation = -this.GetComponent<Rigidbody2D>().rotation;
+        this.GetComponent<Rigidbody2D>().AddForce(-new Vector3(this.transform.position.x * 10, this.transform.position.y*3, 0f), ForceMode2D.Impulse);
         if (this.currentLife <= 0)
         {
             this.Die();
