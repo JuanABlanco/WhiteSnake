@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NPCControler : Personaje {
     public Text ConBar;
-
+    public Image Panel;
 	void Awake()
     {
         this.maxLife = 10000;
@@ -17,9 +17,11 @@ public class NPCControler : Personaje {
     {
         if (texto != null)
         {
+            this.Panel.color =new Color(255f, 255f, 255f, 0.5f);
             this.ConBar.text = this.name + ": " + texto;
         }else
         {
+            this.Panel.color = new Color(0f,0f,0f,0f);
             this.ConBar.text = "";
         }
     }

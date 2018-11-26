@@ -6,8 +6,9 @@ public class EnemyController : Personaje {
 
     public float maxSpeed = 7f; //Velocidad max
     public float speed = 12f; //Velocidad
-    
-        
+    public  AudioClip[] efectos;
+    public  AudioSource audios;
+
 
     private Rigidbody2D rb2d;
 
@@ -57,8 +58,14 @@ public class EnemyController : Personaje {
 
     }
 
+    public void Grito()
+    {
+        this.audios.PlayOneShot(this.efectos[0]);
+    }
+
     public void Dañado()
     {
+        Grito();
         Color original = this.GetComponent<SpriteRenderer>().color;
         this.currentLife -= PlayerController.sharedInstance.currentDamage;
         this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 0f);
@@ -73,7 +80,8 @@ public class EnemyController : Personaje {
     public void Dañado(int daño)
     {
         if(daño > 0)
-        { 
+        {
+            Grito();
             //Color original = this.GetComponent<SpriteRenderer>().color;
             this.currentLife -= daño;
             this.GetComponent<SpriteRenderer>().color = new Color(255 / 255f, 106 / 255f, 0f);
