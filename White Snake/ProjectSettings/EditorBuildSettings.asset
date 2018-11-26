@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Act 1/Boss_Act_1.unity
     guid: d40e0c9fe545a2849bb1b549fbe21806
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 45769158c09727d4793769a1df920d8b
   m_configObjects: {}

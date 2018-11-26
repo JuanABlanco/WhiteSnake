@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour {
             ContarMuertos();
             enemigosVivos = enemigos.Length;
         }
+        if(SceneManager.GetActiveScene().name == "Boss_Act_1" && enemigos.Length == 0)
+        {
+            SceneManager.LoadScene("Creditos");
+        }
     }
 
     void OnTriggerEnter2D (Collider2D cuerpo)
